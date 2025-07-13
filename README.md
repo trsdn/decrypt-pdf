@@ -49,6 +49,7 @@ To use these, download them from their official sources and place them in the `w
 1. Extract hash from PDF (if needed)
 2. Crack password using your wordlist
 3. Decrypt PDF in place or to `results/`
+4. Or simply run `auto_crack.py` to let the tool choose the best method
 
 ## License
 
@@ -64,6 +65,8 @@ The `scripts/` directory contains several tools for password analysis and PDF pa
 - `gpu_crack.py`: Automates hash extraction and runs hashcat (GPU) with a generated wordlist for PDF cracking.
 - `brute_force_crack.py`: Multi-core brute-force attack with numeric, alphabetic, and smart pattern strategies.
 - `advanced_crack.py`: Tries common, numeric, and date-based passwords for a given PDF.
+- `auto_crack.py`: Automatically selects the best cracking method (GPU or CPU) and exposes
+  different cracking modes.
 
 See each script's help or comments for usage details.
 
@@ -131,6 +134,12 @@ The script will:
 
 ```bash
 python pdf_decrypt.py ./encrypted_pdfs ./decrypted_pdfs
+```
+
+You can also let the toolkit decide between GPU or CPU modes:
+
+```bash
+python scripts/auto_crack.py Police_.pdf
 ```
 
 ## Notes
