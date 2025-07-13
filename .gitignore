@@ -1,0 +1,25 @@
+# Ignore everything in wordlists, data, and results except README.md
+wordlists/*
+!wordlists/README.md
+data/*
+!data/README.md
+results/*
+!results/README.md
+
+# Ignore wordlists and sensitive files in root
+date_wordlist.txt
+*.pot
+*.log
+*.hash
+*.out
+*.bak
+*.pyc
+__pycache__/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore virtual environments
+venv/
+.env

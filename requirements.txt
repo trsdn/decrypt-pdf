@@ -1,0 +1,2 @@
+# Python requirements for PDF decryption and cracking scripts
+pikepdf
