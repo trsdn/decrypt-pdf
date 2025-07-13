@@ -12,10 +12,12 @@ This repository provides tools and scripts to automate the decryption of passwor
 ## Usage
 
 1. **Install requirements:**
+
    ```bash
    pip install -r requirements.txt
    brew install pdfcrack qpdf
    ```
+
 2. **Prepare your wordlist:**
    - Place your `date_wordlist.txt` (or other wordlists) in the repo root or reference its path in your scripts.
    - **Do not commit wordlists to the repository.**
@@ -23,13 +25,13 @@ This repository provides tools and scripts to automate the decryption of passwor
    - Use scripts in `scripts/` to automate hash extraction, password cracking, and decryption.
 
 ## Security Notice
+
 - **Never commit password lists or sensitive data to the repository.**
 - The `.gitignore` is configured to prevent accidental inclusion of wordlists and results.
 
 ## Requirements
 
 ## Wordlists Used
-
 
 This project uses custom and public wordlists for password cracking, including:
 
@@ -42,13 +44,14 @@ To use these, download them from their official sources and place them in the `w
 
 **Note:** Wordlists are not included in the repository. Place your wordlists in the `wordlists/` directory as described in the documentation. Only `README.md` in that folder is tracked by git.
 
-
 ## Example Workflow
+
 1. Extract hash from PDF (if needed)
 2. Crack password using your wordlist
 3. Decrypt PDF in place or to `results/`
 
 ## License
+
 MIT License
 
 ## Custom Scripts
@@ -64,7 +67,6 @@ The `scripts/` directory contains several tools for password analysis and PDF pa
 
 See each script's help or comments for usage details.
 
-
 ## Prerequisites
 
 You will need the following tools installed on your system:
@@ -74,7 +76,6 @@ You will need the following tools installed on your system:
 3. **pdfcrack** — For legacy PDF password recovery
 4. **john** (John the Ripper, jumbo version recommended) — For hash extraction and password cracking
 5. **hashcat** — GPU-accelerated password cracking
-
 
 ### Quick Install (macOS & Ubuntu/Debian)
 
@@ -87,13 +88,17 @@ You can install all required external tools with the provided script:
 ### Manual Installation
 
 - On macOS (Homebrew):
+
   ```bash
   brew install qpdf pdfcrack john hashcat
   ```
+
 - On Ubuntu/Debian:
+
   ```bash
   sudo apt-get install qpdf pdfcrack john hashcat
   ```
+
 - On Windows:
   - Download and install [qpdf](https://qpdf.sourceforge.io/), [John the Ripper](https://www.openwall.com/john/), and [hashcat](https://hashcat.net/hashcat/) from their official sites.
   - For `pdfcrack`, see [https://pdfcrack.sourceforge.net/](https://pdfcrack.sourceforge.net/)
@@ -102,11 +107,12 @@ You can install all required external tools with the provided script:
 
 1. Clone this repository
 2. Install the required Python packages:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+## Script Usage
 
 Run the script from the command line:
 
@@ -115,6 +121,7 @@ python pdf_decrypt.py /path/to/input/directory /path/to/output/directory
 ```
 
 The script will:
+
 1. Find all PDF files in the input directory
 2. Attempt to decrypt each PDF file
 3. Save the decrypted versions to the output directory
@@ -131,4 +138,4 @@ python pdf_decrypt.py ./encrypted_pdfs ./decrypted_pdfs
 - The script will create the output directory if it doesn't exist
 - Original files are not modified
 - The script will maintain the original filenames in the output directory
-- Progress and any errors will be displayed in the console 
+- Progress and any errors will be displayed in the console

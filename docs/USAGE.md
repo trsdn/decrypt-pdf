@@ -1,6 +1,7 @@
 # Usage Guide
 
 ## Batch Decryption
+
 - Place PDFs in `data/` or reference their absolute paths.
 - Use scripts in `scripts/` to automate hash extraction and decryption.
 - Store decrypted files in `results/` (gitignored).
@@ -20,5 +21,6 @@ qpdf --password=PASSWORD --replace-input --decrypt /path/to/file.pdf
 ```
 
 ## Adding New PDFs
+
 - Add new files to `data/` or reference their location.
 - Run the automation scripts as needed.
