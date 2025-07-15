@@ -23,3 +23,8 @@ Thumbs.db
 # Ignore virtual environments
 venv/
 .env
+
+# Ignore john directory (submodule or local build)
+john/
+
+
