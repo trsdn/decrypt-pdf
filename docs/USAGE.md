@@ -20,6 +20,23 @@ pdfcrack -w date_wordlist.txt /path/to/file.pdf
 qpdf --password=PASSWORD --replace-input --decrypt /path/to/file.pdf
 ```
 
+## Automatic Cracking Helper
+
+Use `auto_crack.py` to automatically choose between GPU and CPU modes. The script also exposes different cracking strategies via the `--mode` option:
+
+```bash
+python scripts/auto_crack.py secure.pdf
+# or specify a mode
+python scripts/auto_crack.py secure.pdf --mode optimized
+```
+
+Available modes are:
+
+- `auto` *(default)* – Detect GPU support and dispatch accordingly
+- `quick` – Run `advanced_crack.py` for common password patterns
+- `optimized` – Use the CPU-optimized wordlist attack
+- `brute` – Perform a full brute-force attack
+
 ## Adding New PDFs
 
 - Add new files to `data/` or reference their location.
